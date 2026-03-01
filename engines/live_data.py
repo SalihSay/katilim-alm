@@ -178,18 +178,20 @@ def fetch_interest_rates() -> InterestRates:
         except Exception:
             pass
 
-    # Fallback: Mart 2026 referans oranları
-    rates.policy_rate = 42.50       # TCMB politika faizi
-    rates.overnight_rate = 44.00    # Gecelik repo
-    rates.gov_bond_2y = 30.00       # 2Y DİBS
-    rates.gov_bond_5y = 28.50       # 5Y DİBS
-    rates.gov_bond_10y = 27.00      # 10Y DİBS
-    rates.participation_1m = 38.00  # Katılım 1 ay kâr payı
-    rates.participation_3m = 40.00  # 3 ay
-    rates.participation_6m = 35.00  # 6 ay
-    rates.participation_1y = 33.00  # 1 yıl
-    rates.cpi_annual = 39.05        # Yıllık TÜFE
-    rates.date = datetime.now().strftime("%d.%m.%Y")
+    # Fallback: Şubat/Mart 2026 güncel referans oranları
+    # UYARI: Bunlar canlı olmayan sabit değerlerdir.
+    # Canlı veri için TCMB EVDS API key ekleyin (.streamlit/secrets.toml)
+    rates.policy_rate = 37.50       # TCMB politika faizi (Şubat 2026)
+    rates.overnight_rate = 38.50    # Gecelik repo
+    rates.gov_bond_2y = 28.00       # 2Y DİBS
+    rates.gov_bond_5y = 26.50       # 5Y DİBS
+    rates.gov_bond_10y = 25.00      # 10Y DİBS
+    rates.participation_1m = 33.00  # Katılım 1 ay kâr payı (yaklaşık)
+    rates.participation_3m = 35.00  # 3 ay
+    rates.participation_6m = 32.00  # 6 ay
+    rates.participation_1y = 30.00  # 1 yıl
+    rates.cpi_annual = 30.65        # Yıllık TÜFE (Ocak 2026)
+    rates.date = datetime.now().strftime("%d.%m.%Y") + " (referans)"
 
     return rates
 
