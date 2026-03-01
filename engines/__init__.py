@@ -1,0 +1,1 @@
+# KatılımALM — Hesaplama Motorları

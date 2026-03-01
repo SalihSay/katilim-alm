@@ -1,0 +1,189 @@
+{
+    "version": "1.0",
+    "description": "İslami Finans Enstrümanları → Basel III HQLA / LCR / NSFR Mapping",
+    "source": "BDDK Yönetmeliği, IFSB-12, AAOIFI FAS",
+    "hqla_mapping": {
+        "nakit": {
+            "level": "level_1",
+            "haircut": 0.00,
+            "description": "Nakit ve Kasa"
+        },
+        "merkez_bankasi": {
+            "level": "level_1",
+            "haircut": 0.00,
+            "description": "TCMB Hesapları"
+        },
+        "devlet_sukuk": {
+            "level": "level_1",
+            "haircut": 0.00,
+            "description": "Devlet Sukuk / Kira Sertifikası"
+        },
+        "devlet_kira_sertifikasi": {
+            "level": "level_1",
+            "haircut": 0.00,
+            "description": "Devlet Kira Sertifikası"
+        },
+        "ozel_sukuk_aa": {
+            "level": "level_2a",
+            "haircut": 0.15,
+            "description": "Özel Sektör Sukuk (AA- ve üstü)"
+        },
+        "belediye_sukuk": {
+            "level": "level_2a",
+            "haircut": 0.15,
+            "description": "Belediye Sukuk"
+        },
+        "ozel_sukuk_diger": {
+            "level": "level_2b",
+            "haircut": 0.50,
+            "description": "Özel Sektör Sukuk (Diğer)"
+        },
+        "kurumsal_sukuk": {
+            "level": "level_2b",
+            "haircut": 0.50,
+            "description": "Kurumsal Sukuk"
+        }
+    },
+    "runoff_rates": {
+        "katilma_vadesiz_sigortali": {
+            "rate": 0.05,
+            "description": "Vadesiz Katılma (TMSF Sigortalı)"
+        },
+        "katilma_vadesiz_sigortasiz": {
+            "rate": 0.10,
+            "description": "Vadesiz Katılma (Sigortasız)"
+        },
+        "katilma_vadeli_erken_cekim": {
+            "rate": 0.10,
+            "description": "Vadeli Katılma (30 gün içinde vadesi dolan)"
+        },
+        "katilma_vadeli_normal": {
+            "rate": 0.05,
+            "description": "Vadeli Katılma (Normal)"
+        },
+        "bankalararasi_operasyonel": {
+            "rate": 0.25,
+            "description": "Bankalararası Murabaha (Operasyonel)"
+        },
+        "bankalararasi_diger": {
+            "rate": 0.40,
+            "description": "Bankalararası Murabaha (Diğer)"
+        },
+        "kurumsal_operasyonel": {
+            "rate": 0.25,
+            "description": "Kurumsal Katılma (Operasyonel)"
+        },
+        "kurumsal_diger": {
+            "rate": 0.40,
+            "description": "Kurumsal Katılma (Diğer)"
+        },
+        "wad_perakende": {
+            "rate": 0.05,
+            "description": "Wa'd Taahhüdü (Perakende)"
+        },
+        "wad_kurumsal": {
+            "rate": 0.10,
+            "description": "Wa'd Taahhüdü (Kurumsal)"
+        },
+        "wad_finansal": {
+            "rate": 0.40,
+            "description": "Wa'd Taahhüdü (Finansal)"
+        },
+        "teminat_mektubu": {
+            "rate": 0.05,
+            "description": "Teminat Mektubu"
+        },
+        "akreditif": {
+            "rate": 0.05,
+            "description": "Akreditif"
+        }
+    },
+    "asf_weights": {
+        "ozkaynaklar": {
+            "weight": 1.00,
+            "maturity": "sınırsız"
+        },
+        "vadeli_katilma_1y_ustu": {
+            "weight": 1.00,
+            "maturity": ">1 yıl"
+        },
+        "vadeli_katilma_6_12ay": {
+            "weight": 0.50,
+            "maturity": "6-12 ay"
+        },
+        "vadeli_katilma_0_6ay": {
+            "weight": 0.00,
+            "maturity": "<6 ay"
+        },
+        "vadesiz_katilma_perakende": {
+            "weight": 0.90,
+            "maturity": "vadesiz"
+        },
+        "vadesiz_katilma_kurumsal": {
+            "weight": 0.50,
+            "maturity": "vadesiz"
+        },
+        "ihrac_sukuk_1y_ustu": {
+            "weight": 1.00,
+            "maturity": ">1 yıl"
+        },
+        "ihrac_sukuk_6_12ay": {
+            "weight": 0.50,
+            "maturity": "6-12 ay"
+        }
+    },
+    "rsf_weights": {
+        "nakit": {
+            "weight": 0.00,
+            "description": "Nakit"
+        },
+        "merkez_bankasi": {
+            "weight": 0.00,
+            "description": "TCMB"
+        },
+        "devlet_sukuk": {
+            "weight": 0.05,
+            "description": "Devlet Sukuk"
+        },
+        "ozel_sukuk_2a": {
+            "weight": 0.15,
+            "description": "Özel Sukuk (Level 2A)"
+        },
+        "ozel_sukuk_2b": {
+            "weight": 0.50,
+            "description": "Özel Sukuk (Level 2B)"
+        },
+        "murabaha_kisa": {
+            "weight": 0.50,
+            "description": "Murabaha Alacak (<6 ay)"
+        },
+        "murabaha_uzun": {
+            "weight": 0.85,
+            "description": "Murabaha Alacak (>1 yıl)"
+        },
+        "finansal_kiralama_kisa": {
+            "weight": 0.50,
+            "description": "İcara (<6 ay)"
+        },
+        "finansal_kiralama_uzun": {
+            "weight": 0.85,
+            "description": "İcara (>1 yıl)"
+        },
+        "sabit_varlik": {
+            "weight": 1.00,
+            "description": "Sabit Varlıklar"
+        }
+    },
+    "islamic_to_conventional": {
+        "Murabaha": "Ticari Kredi (Maliyet + Kâr Marjı Satış)",
+        "Sukuk": "Tahvil / Bono",
+        "İcara": "Finansal Kiralama",
+        "Wakala": "Vekâlet Bazlı Yatırım",
+        "Mudaraba": "Kâr/Zarar Ortaklığı (Emek-Sermaye)",
+        "Musharaka": "Kâr/Zarar Ortaklığı (Ortak Sermaye)",
+        "Wa'd": "Forward Taahhüt (Tek Taraflı Vaad)",
+        "Muwa'ada": "Forward Taahhüt (Karşılıklı Vaad)",
+        "Katılma Hesabı": "Vadeli/Vadesiz Mevduat",
+        "Kira Sertifikası": "Devlet Kira Sertifikası (Sukuk)"
+    }
+}
